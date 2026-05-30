@@ -118,16 +118,35 @@ def play_on_youtube(query, platform="youtube"):
         return {"success": False, "reason": "Failed to play on YouTube", "action": "play"}
     return {"success": True, "action": "play"}
 
+def show_help(data=None, platform=None):
+    print("\n===== AVAILABLE COMMANDS =====")
+    print("open <app>          -> Open an application")
+    print("search <query>      -> Search on Google")
+    print("search <query> in youtube")
+    print("play <query>        -> Search/play on YouTube")
+    print("type <text>         -> Type text")
+    print("wait <seconds>      -> Wait for specified time")
+    print("enter               -> Press Enter")
+    print("del                 -> Delete previous word")
+    print("prevline            -> Select previous line")
+    print("focus               -> Focus browser search bar")
+    print("help                -> Show this help menu")
+    print("exit                -> Exit AgentDesk")
+    print("==============================\n")
+
+    return {"success": True, "action": "help"}
+
 actions = {
     "open": open_app,
     "type": type_text,
-    "wait": wait,   
+    "wait": wait,
     "enter": press_enter,
     "del": backspace,
     "prevline": prev_line,
     "focus": focus_search,
     "search": search_web,
-    "play": play_on_youtube
+    "play": play_on_youtube,
+    "help": show_help
 }
 
 aliases = {

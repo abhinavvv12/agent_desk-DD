@@ -4,8 +4,16 @@ def parse_intent(user_input):
 
     if not words:
         return None
-    
-    primitive_actions = ["open", "wait", "enter", "del", "focus", "prevline"]
+
+    primitive_actions = [
+    "open",
+    "wait",
+    "enter",
+    "del",
+    "focus",
+    "prevline",
+    "help"
+    ]
     if words[0] in primitive_actions:
         return {"action": words[0], "query": " ".join(words[1:]), "platform": None}
     platform_map = {

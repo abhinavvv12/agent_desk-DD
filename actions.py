@@ -119,6 +119,7 @@ def play_on_youtube(query, platform="youtube"):
     return {"success": True, "action": "play"}
 
 actions = {
+    "help" : show_help,
     "open": open_app,
     "type": type_text,
     "wait": wait,   
